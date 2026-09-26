@@ -4,7 +4,7 @@
 Name:           xlhtml
 Summary:        Excel 95/97 and PowerPoint to HTML converter
 Version:        0.5
-Release:        11%{?dist}
+Release:        12%{?dist}
 
 License:        GPLv2+
 Group:          Applications/Text
@@ -51,6 +51,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/*
 
 %changelog
+* Sat Sep 26 2026 Jean-Philippe Pialasse <jpp@koozali.org> 0.5-12.sme
+- fix to build for el9
+
 * Fri Jul 14 2023 BogusDateBot
 - Eliminated rpmbuild "bogus date" warnings due to inconsistent weekday,
   by assuming the date is correct and changing the weekday.
