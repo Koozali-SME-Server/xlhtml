@@ -1,3 +1,6 @@
+# lto not supported with this old code
+%define _lto_cflags %{nil}
+
 Name:           xlhtml
 Summary:        Excel 95/97 and PowerPoint to HTML converter
 Version:        0.5
@@ -26,7 +29,9 @@ rm -f config.{guess,sub}
 aclocal
 autoconf
 automake -a
-%configure
+echo %{optflags}
+%configure CFLAGS="%{optflags} -fcommon -fno-lto" LDFLAGS="%{__global_ldflags} -fno-lto"
+
 make %{?_smp_mflags}
 
 
